@@ -32,7 +32,13 @@ router.get('/:id', (req, res) => {
         as: 'products',
       },
   })
-  .then((tag) => res.status(200).json(tag))
+  .then((tag) => {
+    if(!tag) {
+      res.status(404).json({message: "No tag found with this id"});
+      return;
+    }
+    res.status(200).json(tag);
+  })
   .catch((err) => res.status(500).json(err));
 });
 
