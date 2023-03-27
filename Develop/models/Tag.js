@@ -10,14 +10,12 @@ Tag.init(
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primarykey: true,
-      autoIncrement: true,
+      primaryKey: true,
+      autoIncrement: true
     },
     tag_name: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
     },
   },
   {
